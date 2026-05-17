@@ -20,9 +20,20 @@ jobs:
         with:
           version: stable
 
-      - name: Update submodules
-        run: git submodule update --init --recursive
-        
+      - name: Install dependencies
+        run: |
+          mkdir -p lib
+          if [ ! -d "lib/forge-std/src" ]; then
+            git clone https://github.com/foundry-rs/forge-std lib/forge-std
+          fi
+          if [ ! -d "lib/openzeppelin-contracts/contracts" ]; then
+            git clone https://github.com/OpenZeppelin/openzeppelin-contracts lib/openzeppelin-contracts
+          fi
+          if [ ! -d "lib/openzeppelin-contracts-upgradeable/contracts" ]; then
+            git clone https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable lib/openzeppelin-contracts-upgradeable
+          fi
+
+
       - name: Install Slither
         run: pip3 install slither-analyzer
 
