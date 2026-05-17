@@ -133,10 +133,23 @@ The subgraph supports queries for:
 - Governance proposals
 - Votes
 
-### Build Commands
+## Demo Flow
 
-```bash
-cd subgraph
-npm install
-npm run codegen
-npm run build
+During the live demonstration, the project is shown in the following order:
+
+1. Open the GoldVault DAO frontend.
+2. Connect MetaMask wallet.
+3. Confirm that the network is Arbitrum Sepolia.
+4. Show the connected wallet address.
+5. Show GoldToken balance, GovernanceToken balance, voting power, delegate address, and vault shares.
+6. Delegate voting power to the connected wallet.
+7. Deposit GoldToken into the ERC-4626 vault.
+8. Show that GoldToken balance decreases and vault shares increase.
+9. Withdraw GoldToken from the vault.
+10. Show that GoldToken balance increases and vault shares decrease.
+11. Enter a governance proposal ID.
+12. Check the proposal state.
+13. Explain that voting is available when the proposal becomes Active.
+14. Show the GitHub repository structure.
+15. Show the subgraph folder with schema, mappings, and GraphQL queries.
+16. Show successful local subgraph build result.
