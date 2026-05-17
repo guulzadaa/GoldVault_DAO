@@ -1,0 +1,264 @@
+Compiling 107 files with Solc 0.8.24
+Solc 0.8.24 finished in 3.69s
+Compiler run successful with warnings:
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/ForkTests.t.sol:83:5:
+   |
+83 |     function testForkUniswapV2RouterHasCorrectWETHAndFactory() public view {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/GoldPriceOracle.t.sol:25:5:
+   |
+25 |     function testConstructorSetsCorrectValues() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/GoldPriceOracle.t.sol:31:5:
+   |
+31 |     function testGetLatestPriceReturnsPrice() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/GoldPriceOracle.t.sol:37:5:
+   |
+37 |     function testGetDecimalsReturnsFeedDecimals() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/GoldPriceOracle.t.sol:43:5:
+   |
+43 |     function testGetDescriptionReturnsFeedDescription() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Analysing contracts...
+Running tests...
+
+Ran 2 tests for test/security-case-studies/ReentrancyCaseStudy.t.sol:ReentrancyCaseStudyTest
+[PASS] testFixedVaultBlocksReentrancyAttack() (gas: 306746)
+[PASS] testVulnerableVaultCanBeDrainedByReentrancy() (gas: 323001)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 3.21ms (2.26ms CPU time)
+
+Ran 14 tests for test/GovernanceToken.t.sol:GovernanceTokenTest
+[PASS] testConstructorRevertsWithZeroAdmin() (gas: 89522)
+[PASS] testConstructorSetsNameSymbolAndRoles() (gas: 32405)
+[PASS] testMintRevertsWhenPaused() (gas: 46264)
+[PASS] testMintRevertsWithZeroAddress() (gas: 14475)
+[PASS] testMintRevertsWithZeroAmount() (gas: 16759)
+[PASS] testMinterCanMint() (gas: 120647)
+[PASS] testNonMinterCannotMint() (gas: 14695)
+[PASS] testNonPauserCannotPause() (gas: 13809)
+[PASS] testNonceStartsAtZero() (gas: 10806)
+[PASS] testPauserCanPauseAndUnpause() (gas: 30225)
+[PASS] testTransferRevertsWhenPaused() (gas: 150333)
+[PASS] testUserCanDelegateVotingPowerToAnotherAddress() (gas: 197167)
+[PASS] testUserCanDelegateVotingPowerToSelf() (gas: 195165)
+[PASS] testVotingPowerMovesAfterTransfer() (gas: 305911)
+Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 324.69ms (47.51ms CPU time)
+
+Ran 15 tests for test/GoldToken.t.sol:GoldTokenTest
+[PASS] testBurnRevertsWithZeroAddress() (gas: 14407)
+[PASS] testBurnRevertsWithZeroAmount() (gas: 16625)
+[PASS] testConstructorRevertsWithZeroAdmin() (gas: 83895)
+[PASS] testConstructorSetsNameSymbolAndRoles() (gas: 32557)
+[PASS] testIssuerCanBurn() (gas: 77321)
+[PASS] testIssuerCanMint() (gas: 69791)
+[PASS] testMintRevertsWhenPaused() (gas: 46328)
+[PASS] testMintRevertsWithZeroAddress() (gas: 14496)
+[PASS] testMintRevertsWithZeroAmount() (gas: 16758)
+[PASS] testNonIssuerCannotBurn() (gas: 74008)
+[PASS] testNonIssuerCannotMint() (gas: 14738)
+[PASS] testNonPauserCannotPause() (gas: 13808)
+[PASS] testPauserCanPauseAndUnpause() (gas: 30100)
+[PASS] testTransferRevertsWhenPaused() (gas: 99474)
+[PASS] testUserCanTransferWhenNotPaused() (gas: 100363)
+Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 362.16ms (29.93ms CPU time)
+
+Ran 10 tests for test/FuzzTests.t.sol:FuzzTests
+[PASS] testFuzzAMMAddAndRemoveLiquidity(uint256) (runs: 256, μ: 230449, ~: 230573)
+[PASS] testFuzzAMMSwapToken0ForToken1(uint256,uint256) (runs: 256, μ: 264827, ~: 264407)
+[PASS] testFuzzAMMSwapToken1ForToken0(uint256,uint256) (runs: 256, μ: 264885, ~: 264465)
+[PASS] testFuzzGovernanceDelegateToAnotherAddress(uint256) (runs: 256, μ: 199913, ~: 199315)
+[PASS] testFuzzGovernanceMintAndDelegateToSelf(uint256) (runs: 256, μ: 196074, ~: 195476)
+[PASS] testFuzzGovernanceVotingPowerAfterTransfer(uint256,uint256) (runs: 256, μ: 308239, ~: 308194)
+[PASS] testFuzzVaultDepositMintsShares(uint256) (runs: 256, μ: 108824, ~: 108245)
+[PASS] testFuzzVaultPreviewDepositMatchesDeposit(uint256) (runs: 256, μ: 109151, ~: 108572)
+[PASS] testFuzzVaultRedeemBurnsShares(uint256) (runs: 256, μ: 96386, ~: 95932)
+[PASS] testFuzzVaultWithdrawReturnsAssets(uint256,uint256) (runs: 256, μ: 133356, ~: 134783)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 532.08ms (2.60s CPU time)
+
+Ran 5 tests for test/ForkTests.t.sol:ForkTests
+[PASS] testForkChainlinkEthUsdFeedReturnsValidPrice() (gas: 21518)
+[PASS] testForkUSDCMetadataAndSupply() (gas: 25519)
+[PASS] testForkUSDCWhaleHasBalance() (gas: 13300)
+[PASS] testForkUniswapV2GetAmountsOutEthToUsdc() (gas: 14627)
+[PASS] testForkUniswapV2RouterHasCorrectWETHAndFactory() (gas: 4443)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 1.53s (2.65s CPU time)
+
+Ran 18 tests for test/GoldPriceOracle.t.sol:GoldPriceOracleTest
+[PASS] testCannotSetZeroPriceFeed() (gas: 13932)
+[PASS] testCannotSetZeroStalePeriod() (gas: 13992)
+[PASS] testConstructorRevertsWithZeroAdmin() (gas: 39971)
+[PASS] testConstructorRevertsWithZeroFeed() (gas: 63975)
+[PASS] testConstructorRevertsWithZeroStalePeriod() (gas: 66215)
+[PASS] testConstructorSetsCorrectValues() (gas: 18868)
+[PASS] testGetDecimalsReturnsFeedDecimals() (gas: 11367)
+[PASS] testGetDescriptionReturnsFeedDescription() (gas: 19803)
+[PASS] testGetLatestPriceReturnsPrice() (gas: 25545)
+[PASS] testNonOwnerCannotUpdatePriceFeed() (gas: 622476)
+[PASS] testNonOwnerCannotUpdateStalePeriod() (gas: 13991)
+[PASS] testOwnerCanUpdatePriceFeed() (gas: 636348)
+[PASS] testOwnerCanUpdateStalePeriod() (gas: 21081)
+[PASS] testRevertsWhenAnsweredInRoundIsOld() (gas: 34404)
+[PASS] testRevertsWhenPriceIsNegative() (gas: 39147)
+[PASS] testRevertsWhenPriceIsStale() (gas: 39875)
+[PASS] testRevertsWhenPriceIsZero() (gas: 34369)
+[PASS] testRevertsWhenUpdatedAtIsZero() (gas: 27778)
+Suite result: ok. 18 passed; 0 failed; 0 skipped; finished in 3.25s (38.36ms CPU time)
+
+Ran 3 tests for test/security-case-studies/AccessControlCaseStudy.t.sol:AccessControlCaseStudyTest
+[PASS] testFixedTokenAllowsAuthorizedMinterToMint() (gas: 65654)
+[PASS] testFixedTokenBlocksUnauthorizedMint() (gas: 21572)
+[PASS] testVulnerableTokenAllowsAnyoneToMint() (gas: 61268)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 3.25s (4.68ms CPU time)
+
+Ran 25 tests for test/GoldAMM.t.sol:GoldAMMTest
+[PASS] testAddInitialLiquidity() (gas: 227588)
+[PASS] testAddLiquidityRevertsWhenPaused() (gas: 29241)
+[PASS] testAddLiquidityRevertsWithSlippage() (gas: 73556)
+[PASS] testAddLiquidityRevertsWithZeroAmount0() (gas: 21200)
+[PASS] testAddLiquidityRevertsWithZeroAmount1() (gas: 21167)
+[PASS] testAddLiquidityRevertsWithZeroReceiver() (gas: 21043)
+[PASS] testAddSecondLiquidityKeepsRatio() (gas: 279551)
+[PASS] testConstructorRevertsWithIdenticalTokens() (gas: 136649)
+[PASS] testConstructorRevertsWithZeroOwner() (gas: 112404)
+[PASS] testConstructorRevertsWithZeroToken0() (gas: 136288)
+[PASS] testConstructorRevertsWithZeroToken1() (gas: 136450)
+[PASS] testConstructorSetsTokensAndOwner() (gas: 32100)
+[PASS] testGetAmountOutRevertsWithInvalidToken() (gas: 220664)
+[PASS] testNonOwnerCannotPause() (gas: 13498)
+[PASS] testOwnerCanPauseAndUnpause() (gas: 20853)
+[PASS] testRemoveLiquidity() (gas: 247864)
+[PASS] testRemoveLiquidityRevertsWithZeroReceiver() (gas: 224986)
+[PASS] testRemoveLiquidityRevertsWithZeroShares() (gas: 20573)
+[PASS] testSwapExactToken0ForToken1() (gas: 262271)
+[PASS] testSwapExactToken1ForToken0() (gas: 262335)
+[PASS] testSwapRevertsWhenPaused() (gas: 232793)
+[PASS] testSwapRevertsWithInsufficientLiquidity() (gas: 24385)
+[PASS] testSwapRevertsWithSlippageExceeded() (gas: 226387)
+[PASS] testSwapRevertsWithZeroAmount() (gas: 224754)
+[PASS] testSwapRevertsWithZeroReceiver() (gas: 224631)
+Suite result: ok. 25 passed; 0 failed; 0 skipped; finished in 3.25s (84.53ms CPU time)
+
+Ran 5 tests for test/InvariantTests.t.sol:InvariantTests
+[PASS] invariantAMMKDoesNotDecreaseAfterSwaps() (runs: 256, calls: 3840, reverts: 0)
+
+╭----------------+---------------------+-------+---------+----------╮
+| Contract       | Selector            | Calls | Reverts | Discards |
++===================================================================+
+| AMMSwapHandler | swapToken0ForToken1 | 992   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| AMMSwapHandler | swapToken1ForToken0 | 935   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | deposit             | 982   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | withdraw            | 931   | 0       | 0        |
+╰----------------+---------------------+-------+---------+----------╯
+
+[PASS] invariantAMMReservesMatchTokenBalances() (runs: 256, calls: 3840, reverts: 0)
+
+╭----------------+---------------------+-------+---------+----------╮
+| Contract       | Selector            | Calls | Reverts | Discards |
++===================================================================+
+| AMMSwapHandler | swapToken0ForToken1 | 992   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| AMMSwapHandler | swapToken1ForToken0 | 935   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | deposit             | 982   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | withdraw            | 931   | 0       | 0        |
+╰----------------+---------------------+-------+---------+----------╯
+
+[PASS] invariantGoldTokenSupplyIsConserved() (runs: 256, calls: 3840, reverts: 0)
+
+╭----------------+---------------------+-------+---------+----------╮
+| Contract       | Selector            | Calls | Reverts | Discards |
++===================================================================+
+| AMMSwapHandler | swapToken0ForToken1 | 992   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| AMMSwapHandler | swapToken1ForToken0 | 935   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | deposit             | 982   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | withdraw            | 931   | 0       | 0        |
+╰----------------+---------------------+-------+---------+----------╯
+
+[PASS] invariantVaultSharesMatchUserBalance() (runs: 256, calls: 3840, reverts: 0)
+
+╭----------------+---------------------+-------+---------+----------╮
+| Contract       | Selector            | Calls | Reverts | Discards |
++===================================================================+
+| AMMSwapHandler | swapToken0ForToken1 | 992   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| AMMSwapHandler | swapToken1ForToken0 | 935   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | deposit             | 982   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | withdraw            | 931   | 0       | 0        |
+╰----------------+---------------------+-------+---------+----------╯
+
+[PASS] invariantVaultTotalAssetsEqualsTokenBalance() (runs: 256, calls: 3840, reverts: 0)
+
+╭----------------+---------------------+-------+---------+----------╮
+| Contract       | Selector            | Calls | Reverts | Discards |
++===================================================================+
+| AMMSwapHandler | swapToken0ForToken1 | 992   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| AMMSwapHandler | swapToken1ForToken0 | 935   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | deposit             | 982   | 0       | 0        |
+|----------------+---------------------+-------+---------+----------|
+| VaultHandler   | withdraw            | 931   | 0       | 0        |
+╰----------------+---------------------+-------+---------+----------╯
+
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 4.87s (17.44s CPU time)
+
+Ran 9 test suites in 4.90s (17.37s CPU time): 97 tests passed, 0 failed, 0 skipped (97 total tests)
+
+╭------------------------------------------------------------+------------------+------------------+----------------+-----------------╮
+| File                                                       | % Lines          | % Statements     | % Branches     | % Funcs         |
++=====================================================================================================================================+
+| src/GasBenchmark.sol                                       | 0.00% (0/40)     | 0.00% (0/41)     | 100.00% (0/0)  | 0.00% (0/12)    |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/GoldAMM.sol                                            | 96.08% (98/102)  | 85.92% (122/142) | 46.88% (15/32) | 100.00% (10/10) |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/GoldCertificateNFT.sol                                 | 0.00% (0/25)     | 0.00% (0/22)     | 0.00% (0/3)    | 0.00% (0/8)     |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/GoldPriceOracle.sol                                    | 100.00% (29/29)  | 100.00% (35/35)  | 100.00% (8/8)  | 100.00% (7/7)   |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/GoldToken.sol                                          | 100.00% (20/20)  | 100.00% (19/19)  | 100.00% (5/5)  | 100.00% (6/6)   |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/GoldVaultV1.sol                                        | 0.00% (0/32)     | 0.00% (0/28)     | 0.00% (0/1)    | 0.00% (0/11)    |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/GoldVaultV2.sol                                        | 0.00% (0/36)     | 0.00% (0/44)     | 0.00% (0/3)    | 0.00% (0/8)     |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/GovernanceToken.sol                                    | 100.00% (17/17)  | 100.00% (15/15)  | 100.00% (3/3)  | 100.00% (6/6)   |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/VaultFactory.sol                                       | 0.00% (0/72)     | 0.00% (0/80)     | 0.00% (0/12)   | 0.00% (0/17)    |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/security-case-studies/AccessControlFixedToken.sol      | 100.00% (6/6)    | 80.00% (4/5)     | 0.00% (0/1)    | 100.00% (2/2)   |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/security-case-studies/AccessControlVulnerableToken.sol | 100.00% (2/2)    | 100.00% (1/1)    | 100.00% (0/0)  | 100.00% (1/1)   |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/security-case-studies/ReentrancyFixedVault.sol         | 81.82% (9/11)    | 75.00% (9/12)    | 33.33% (1/3)   | 66.67% (2/3)    |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| src/security-case-studies/ReentrancyVulnerableVault.sol    | 81.82% (9/11)    | 66.67% (8/12)    | 0.00% (0/3)    | 66.67% (2/3)    |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| test/InvariantTests.t.sol                                  | 100.00% (39/39)  | 95.83% (46/48)   | 50.00% (2/4)   | 100.00% (6/6)   |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| test/mocks/MockV3Aggregator.sol                            | 83.87% (26/31)   | 86.96% (20/23)   | 0.00% (0/2)    | 75.00% (6/8)    |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| test/security-case-studies/ReentrancyCaseStudy.t.sol       | 100.00% (8/8)    | 100.00% (5/5)    | 100.00% (1/1)  | 100.00% (3/3)   |
+|------------------------------------------------------------+------------------+------------------+----------------+-----------------|
+| Total                                                      | 54.68% (263/481) | 53.38% (284/532) | 43.21% (35/81) | 45.95% (51/111) |
+╰------------------------------------------------------------+------------------+------------------+----------------+-----------------╯
