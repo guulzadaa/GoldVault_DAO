@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, gulzada]
   pull_request:
     branches: [main]
 
@@ -14,13 +14,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: stable
+
+      - name: Install dependencies
+        run: |
+          forge install foundry-rs/forge-std
+          forge install OpenZeppelin/openzeppelin-contracts
+          forge install OpenZeppelin/openzeppelin-contracts-upgradeable
 
       - name: Install Slither
         run: pip3 install slither-analyzer
@@ -31,7 +35,7 @@ jobs:
       - name: Build contracts
         run: forge build
 
-      - name: Run unit, fuzz, and invariant tests
+      - name: Run tests
         run: forge test -vv
         env:
           MAINNET_RPC_URL: ${{ secrets.MAINNET_RPC_URL }}
