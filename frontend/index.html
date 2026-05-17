@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GoldVault DAO</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.1/dist/ethers.umd.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>GoldVault DAO</h1>
+    <p class="subtitle">
+      RWA Tokenization Platform for Tokenized Gold
+    </p>
+
+    <div class="card">
+      <h2>Wallet</h2>
+
+      <button id="connectBtn">Connect MetaMask</button>
+      <button id="switchNetworkBtn">Switch to Arbitrum Sepolia</button>
+
+<p><b>Current Chain:</b> <span id="chainId">-</span></p>
+<p id="statusMessage" class="status"></p>
+      <p><b>Account:</b> <span id="account">Not connected</span></p>
+
+      <div id="networkWarning" class="warning hidden">
+        Wrong Network! Please switch to Arbitrum Sepolia.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Balances</h2>
+
+      <p>Gold Token Balance: <span id="goldBalance">0</span></p>
+
+      <p>Governance Token Balance:
+        <span id="govBalance">0</span>
+      </p>
+
+      <p>Voting Power:
+        <span id="votingPower">0</span>
+      </p>
+
+      <p>Delegate Address:
+        <span id="delegateAddress">-</span>
+      </p>
+
+      <p>Vault Shares:
+        <span id="vaultShares">0</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Governance</h2>
+
+      <button id="delegateBtn">
+        Delegate Votes To Myself
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Vault</h2>
+
+      <input
+        type="text"
+        id="depositInput"
+        placeholder="Deposit amount"
+      />
+
+      <button id="depositBtn">Deposit</button>
+
+      <input
+        type="text"
+        id="withdrawInput"
+        placeholder="Withdraw amount"
+      />
+
+      <button id="withdrawBtn">Withdraw</button>
+    </div>
+
+    <div class="card">
+      <h2>Proposal Voting</h2>
+
+      <input
+        type="text"
+        id="proposalInput"
+        placeholder="Proposal ID"
+      />
+
+      <button id="checkProposalBtn">
+        Check Proposal State
+      </button>
+
+      <button id="voteBtn">
+        Vote For
+      </button>
+
+      <p>
+        Proposal State:
+        <span id="proposalState">-</span>
+      </p>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

@@ -21,3 +21,13 @@ Arbitrum Sepolia
 - Solidity Version: 0.8.24
 - Framework: Foundry
 - Upgrade Pattern: UUPS Proxy
+
+## Governance Deployment
+
+Network: Arbitrum Sepolia
+
+TimelockController: 0xfDd58bfcD9e73577095cC4Ba3b2Ce4a4456bf6b3
+
+GoldGovernor: 0x823792C4D55a68006AfaAc477C5DCD470e2Ca6D2
+
+GovernanceToken: DEPLOYED_GOVERNANCE_TOKEN address from .env
