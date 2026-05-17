@@ -20,12 +20,9 @@ jobs:
         with:
           version: stable
 
-      - name: Install dependencies
-        run: |
-          forge install foundry-rs/forge-std
-          forge install OpenZeppelin/openzeppelin-contracts
-          forge install OpenZeppelin/openzeppelin-contracts-upgradeable
-
+      - name: Update submodules
+        run: git submodule update --init --recursive
+        
       - name: Install Slither
         run: pip3 install slither-analyzer
 
